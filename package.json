@@ -1,0 +1,19 @@
+{
+  "name": "cs-department-website",
+  "version": "1.0.0",
+  "description": "Website for Sahyadri computer Science department made using MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shravan1998/cs-department-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shravan1998/cs-department-website/issues"
+  },
+  "homepage": "https://github.com/shravan1998/cs-department-website#readme"
+}
