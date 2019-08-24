@@ -3,17 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    AchievementsComponent,
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
 
   ],
   providers: [],

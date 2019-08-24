@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
 
 const routes: Routes = [{
-  path:'achievements',
-  loadChildren:()=>import('./achievements/achievements-list/achievements-list.component').then(mod=>mod.AchievementsModule)
+  path:'',component:HomeComponent
 }];
 
 @NgModule({
