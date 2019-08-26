@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import {EventsComponent} from './events/events.component';
+import {FacultyComponent} from './faculty/faculty.component';
 
 
 const routes: Routes = [{
@@ -11,6 +12,8 @@ const routes: Routes = [{
   path:'achievements',component:AchievementsComponent
 },{
   path:'events',component:EventsComponent
+},{
+  path:'faculty',component:FacultyComponent
 }];
 
 @NgModule({
