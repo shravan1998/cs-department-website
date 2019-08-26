@@ -10,9 +10,10 @@ var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,re
         console.log("Connected to database");
     }
 });
+
 var app = express();
 app.use(bodyParser());
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(function(req,res,next){
@@ -21,6 +22,26 @@ app.use(function(req,res,next){
     res.setHeader('Allow-Access-Allow-Headers','X-Requested-With,content-type');
     res.setHeader("Access-Control-Allow-Credentials",true);
     next();
+});
+var Schema = mongo.Schema;
+
+var achievements=new Schema({
+    name:{type:String},
+    usn:{type:String},
+    Year_of_admission:{type:Number},
+    competition:{type:String},
+    Win:{type:String},
+    date_of_participation:{type:Date}
+});
+var model = mongo.model('achievements',achievements);
+app.get("/achievements",function(req,res) {
+    model.find({},function(err,data){
+        if(err){
+            res.send(err);
+        }else{
+            res.send(data);
+        }
+    });
 });
 
 app.listen(8000,function(){
