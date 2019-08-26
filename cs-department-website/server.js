@@ -35,7 +35,9 @@ var achievements=new Schema({
 });
 var model = mongo.model('achievements',achievements);
 app.get("/achievements",function(req,res) {
-    model.find({},function(err,data){
+    var name=req.body.name;
+    var usn=req.body.usn;
+    model.find({name:name,usn:usn},function(err,data){
         if(err){
             res.send(err);
         }else{
