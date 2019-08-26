@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { EventsComponent } from './events/events.component';
 
 
 
@@ -13,6 +14,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
     AppComponent,
     HomeComponent,
     AchievementsComponent,
+    EventsComponent,
    
   ],
   imports: [
