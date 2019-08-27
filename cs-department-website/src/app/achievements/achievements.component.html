@@ -1,8 +1,8 @@
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" (submit)="GetData()">
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate" name="name">
+          <input id="first_name" type="text" class="form-control" [(ngModel)]="name" name="name">
           <label for="first_name">Name</label>
         </div>
         </div>
@@ -28,13 +28,8 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let i for achievements">
-          <td>{{i.name}}</td>
-          <td>{{i.usn}}</td>
-          <td>{{i.Year_of_admission}}</td>
-          <td>{{i.competition}}</td>
-          <td>{{i.Win}}</td>
-          <td>{{i.date_of_participation}}</td>
+        <tr>
+         
         </tr>
         
       </tbody>

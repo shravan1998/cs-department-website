@@ -7,6 +7,7 @@ var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,re
     if(err){
         throw err;
     }else{
+        console.log(response);
         console.log("Connected to database");
     }
 });
@@ -35,13 +36,13 @@ var achievements=new Schema({
 });
 var model = mongo.model('achievements',achievements);
 app.get("/achievements",function(req,res) {
-    var name=req.body.name;
-    var usn=req.body.usn;
-    model.find({name:name,usn:usn},function(err,data){
+   
+    model.find({name:req.body.name,usn:req.body.usn},function(err,data){
         if(err){
             res.send(err);
         }else{
             res.send(data);
+            console.log(data);
         }
     });
 });
