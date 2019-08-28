@@ -7,7 +7,7 @@ var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,re
     if(err){
         throw err;
     }else{
-        console.log(response);
+        
         console.log("Connected to database");
     }
 });

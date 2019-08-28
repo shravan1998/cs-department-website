@@ -2,14 +2,14 @@
     <form class="col s12" (submit)="GetData()">
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="form-control" [(ngModel)]="name" name="name">
-          <label for="first_name">Name</label>
+          <input id="usn" type="text" class="validate form-control" [(ngModel)]="name" name="name">
+          <label for="usn">Name</label>
         </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate" name="usn">
-              <label for="first_name">USN</label>
+              <input id="usn" type="text" class="validate form-control" [(ngModel)]="usn" name="usn">
+              <label for="usn">USN</label>
             </div>
             </div>
             <button class="waves-effect waves-light btn-large indigo darken-4" type="submit">Submit</button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 @Component({
   selector: 'app-achievements',
   templateUrl: './achievements.component.html',
@@ -8,14 +9,17 @@ import {FormControl} from '@angular/forms';
 export class AchievementsComponent implements OnInit {
   name:String;
   usn:String;
-  constructor() { }
+  constructor() {
+    var name=this.name;
+    var usn = this.usn;
+   }
 
   ngOnInit() {
     var userControl = new FormControl('');
   }
-  GetData(){
-    console.log(this.name);
-    console.log(this.usn);
+  GetData(name,usn){
+    
   }
+  
 
 }
