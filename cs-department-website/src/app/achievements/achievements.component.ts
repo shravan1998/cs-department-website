@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { AchievementsService} from '../achievements.service';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-achievements',
   templateUrl: './achievements.component.html',
@@ -9,16 +10,23 @@ import {HttpClientModule} from '@angular/common/http';
 export class AchievementsComponent implements OnInit {
   name:String;
   usn:String;
-  constructor() {
-    var name=this.name;
-    var usn = this.usn;
+  constructor(private achievementservice:AchievementsService,
+    private router:Router) {
+    
    }
 
   ngOnInit() {
-    var userControl = new FormControl('');
-  }
-  GetData(name,usn){
     
+  }
+  GetData(){
+    const user={
+      name:this.name,
+      usn:this.usn
+    }
+    this.achievementservice.getdata(user).subscribe((response)=>{
+      console.log(response);
+    });
+   
   }
   
 

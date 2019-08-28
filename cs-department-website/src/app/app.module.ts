@@ -8,7 +8,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { EventsComponent } from './events/events.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import {AchievementsService} from './achievements.service';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [AchievementsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

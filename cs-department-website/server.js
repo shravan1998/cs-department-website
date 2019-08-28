@@ -35,9 +35,9 @@ var achievements=new Schema({
     date_of_participation:{type:Date}
 });
 var model = mongo.model('achievements',achievements);
-app.get("/achievements",function(req,res) {
+app.get("/achievements/data",function(req,res) {
    
-    model.find({name:req.body.name,usn:req.body.usn},function(err,data){
+    model.find({},function(err,data){
         if(err){
             res.send(err);
         }else{
