@@ -11,8 +11,8 @@ var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,re
         console.log("Connected to database");
     }
 });
-
-var app = express.Router();
+var app = express();
+var router = express.Router();
 app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -37,7 +37,7 @@ var achievements=new Schema({
 var model = mongo.model('achievements',achievements);
 app.get("/achievements/api",function(req,res) {
    
-    model.find({$and:[{name:req.body.name},{usn:req.body.usn}]})
+    model.find({})
     .exec(function(err,data){
         if(err){
             res.send(err);
@@ -47,18 +47,7 @@ app.get("/achievements/api",function(req,res) {
         }
     })
 });
-app.get("/achievements/api/:id",function(req,res) {
-   
-    model.findById(req.params.id)
-    .exec(function(err,data){
-        if(err){
-            res.send(err);
-        }else{
-            res.send(data);
-            console.log(data);
-        }
-    })
-});
+
 
 app.listen(8000,function(){
     console.log("connected");

@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class AchievementsComponent implements OnInit {
   name:String;
   usn:String;
+  public details=[];
   constructor(private achievementservice:AchievementsService,
     private router:Router) {
     
@@ -19,12 +20,12 @@ export class AchievementsComponent implements OnInit {
     
   }
   GetData(){
-    
+  
     var name=this.name;
     var usn=this.usn;
     
     this.achievementservice.getdata(name,usn).subscribe(function(response){
-      this.response=response as String;
+      this.details=response;
     });
    
   }
