@@ -19,12 +19,12 @@ export class AchievementsComponent implements OnInit {
     
   }
   GetData(){
-    const user={
-      name:this.name,
-      usn:this.usn
-    }
-    this.achievementservice.getdata(user).subscribe((response)=>{
-      console.log(response);
+    
+    var name=this.name;
+    var usn=this.usn;
+    
+    this.achievementservice.getdata(name,usn).subscribe(function(response){
+      this.response=response as String;
     });
    
   }

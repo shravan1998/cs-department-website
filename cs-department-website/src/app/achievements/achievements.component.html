@@ -27,9 +27,14 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody *ngFor="let i of achievements">
         <tr>
-         
+         <td>{{i.name}}</td>
+         <td>{{i.usn}}</td>
+         <td>{{i.Year_of_admission}}</td>
+         <td>{{i.competition}}</td>
+         <td>{{i.Win}}</td>
+         <td>{{i.date_of_participation}}</td>
         </tr>
         
       </tbody>
