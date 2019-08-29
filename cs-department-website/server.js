@@ -12,7 +12,7 @@ var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,re
     }
 });
 
-var app = express();
+var app = express.Router();
 app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(function(req,res,next){
     res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
     res.setHeader('Allow-Access-Allow-Methods','GET,POST,OPTIONS,PUT,PATCH,DELETE');
-    res.setHeader('Allow-Access-Allow-Headers','X-Requested-With,content-type');
+    res.setHeader('Allow-Access-Allow-Headers','Origin,X-Requested-With,content-type,Accept');
     res.setHeader("Access-Control-Allow-Credentials",true);
     next();
 });
@@ -35,16 +35,29 @@ var achievements=new Schema({
     date_of_participation:{type:Date}
 });
 var model = mongo.model('achievements',achievements);
-app.get("/achievements/data",function(req,res) {
+app.get("/achievements/api",function(req,res) {
    
-    model.find({},function(err,data){
+    model.find({$and:[{name:req.body.name},{usn:req.body.usn}]})
+    .exec(function(err,data){
         if(err){
             res.send(err);
         }else{
             res.send(data);
             console.log(data);
         }
-    });
+    })
+});
+app.get("/achievements/api/:id",function(req,res) {
+   
+    model.findById(req.params.id)
+    .exec(function(err,data){
+        if(err){
+            res.send(err);
+        }else{
+            res.send(data);
+            console.log(data);
+        }
+    })
 });
 
 app.listen(8000,function(){
