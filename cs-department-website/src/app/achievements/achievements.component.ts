@@ -21,10 +21,9 @@ export class AchievementsComponent implements OnInit {
   }
   GetData(){
   
-    var name=this.name;
-    var usn=this.usn;
+   
     
-    this.achievementservice.getdata(name,usn).subscribe(function(response){
+    this.achievementservice.getdata().subscribe(function(response){
       this.details=response;
     });
    
