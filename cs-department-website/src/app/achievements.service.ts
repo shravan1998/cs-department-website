@@ -13,11 +13,7 @@ const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json'})}
 export class AchievementsService {
   url='http://localhost:8000/achievements/api';
   constructor(private http:HttpClient) { }
-  public getdata():Observable<IAchievements[]>{
-    
-    
-   return this.http.get<IAchievements[]>(`${this.url}`);
+  public getdata(){
+   return this.http.get(`${this.url}`);
   }
-  
-  
 }

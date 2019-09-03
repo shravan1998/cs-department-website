@@ -1,20 +1,3 @@
-<div class="row">
-    <form class="col s12" (submit)="GetData()">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="usn" type="text" class="validate form-control" [(ngModel)]="name" name="name">
-          <label for="usn">Name</label>
-        </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-              <input id="usn" type="text" class="validate form-control" [(ngModel)]="usn" name="usn">
-              <label for="usn">USN</label>
-            </div>
-            </div>
-            <button class="waves-effect waves-light btn-large indigo darken-4" type="submit">Submit</button>
-    </form>
-    </div>
     <table class="centered">
       <thead>
         <tr>
@@ -22,19 +5,19 @@
             <th>USN</th>
             <th>Year Of Admission</th>
             <th>Competion</th>
-            <th>Participation/Win</th>
+            <th>Win</th>
             <th>Date of Participation</th>
         </tr>
       </thead>
 
-      <tbody *ngFor="let i of achievements">
+      <tbody *ngFor="let i of details">
         <tr>
          <td>{{i.name}}</td>
-         <td>{{i.usn}}</td>
-         <td>{{i.Year_of_admission}}</td>
-         <td>{{i.competition}}</td>
+         <td>{{i.USN}}</td>
+         <td>{{i.Year_Of_Admission}}</td>
+         <td>{{i.Competition}}</td>
          <td>{{i.Win}}</td>
-         <td>{{i.date_of_participation}}</td>
+         <td>{{i.Date_Of_Participation}}</td>
         </tr>
         
       </tbody>

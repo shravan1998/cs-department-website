@@ -36,13 +36,14 @@ var achievements=new Schema({
 });
 var model = mongo.model('achievements',achievements);
 app.get("/achievements/api",function(req,res) {
-    model.find({$and:[{"name":req.body.name},{"usn":req.body.usn}]})
+    model.find({})
     .exec(function(err,data){
         if(err){
             res.send(err);
         }else{
             res.send(data);
             console.log(data);
+            
         }
     })
 });
