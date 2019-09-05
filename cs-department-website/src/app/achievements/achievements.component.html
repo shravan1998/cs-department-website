@@ -1,3 +1,60 @@
+<div class="row">
+  <form class="col s12" >
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="name" type="text" class="validate">
+        <label for="name">Name</label>
+      </div>
+    </div>
+      <div class="input-field col s6">
+        <input id="usn" type="text" class="validate">
+        <label for="usn">USN</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="year" type="text" class="validate">
+          <label for="year">Year Of Admission</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="competition" type="text" class="validate">
+          <label for="competition">Competion</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="position" type="text" class="validate">
+          <label for="position">Position</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">        
+          <input type="date" class="datepicker" id="date">
+              
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="event" type="text" class="validate">
+          <label for="event">Event</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="venue" type="text" class="validate">
+          <label for="venue">Venue</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="level" type="text" class="validate">
+          <label for="level">Level</label>
+        </div>
+      </div>
+    </form>
+    <button class="waves-effect waves-light btn-large indigo darken-4" type="submit">Submit</button>
+</div>
     <table class="centered">
       <thead>
         <tr>
@@ -5,19 +62,25 @@
             <th>USN</th>
             <th>Year Of Admission</th>
             <th>Competion</th>
-            <th>Win</th>
+            <th>Position</th>
             <th>Date of Participation</th>
+            <th>Event</th>
+            <th>Venue</th>
+            <th>Level</th>
         </tr>
       </thead>
 
       <tbody *ngFor="let i of details">
         <tr>
-         <td>{{i.name}}</td>
+         <td>{{i.Name}}</td>
          <td>{{i.USN}}</td>
          <td>{{i.Year_Of_Admission}}</td>
          <td>{{i.Competition}}</td>
          <td>{{i.Win}}</td>
          <td>{{i.Date_Of_Participation}}</td>
+         <td>{{i.Event}}</td>
+         <td>{{i.Venue}}</td>
+         <td>{{i.Level}}</td>
         </tr>
         
       </tbody>
