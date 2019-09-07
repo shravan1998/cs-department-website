@@ -1,59 +1,60 @@
 <div class="row">
-  <form class="col s12" >
+  <form class="col s12" #studentForm="ngForm" (ngSubmit)="onSave(studentForm.value)" novalidate>
     <div class="row">
       <div class="input-field col s6">
-        <input id="name" type="text" class="validate">
+        <input id="name" type="text" class="validate" [(ngModel)]="name" name="name">
         <label for="name">Name</label>
       </div>
     </div>
       <div class="input-field col s6">
-        <input id="usn" type="text" class="validate">
+        <input id="usn" type="text" class="validate" [(ngModel)]="usn" name="usn">
         <label for="usn">USN</label>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="year" type="text" class="validate">
+          <input id="year" type="text" class="validate" [(ngModel)]="year" name="year">
           <label for="year">Year Of Admission</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="competition" type="text" class="validate">
+          <input id="competition" type="text" class="validate" [(ngModel)]="competition" name="competition">
           <label for="competition">Competion</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="position" type="text" class="validate">
+          <input id="position" type="text" class="validate" [(ngModel)]="position" name="position">
           <label for="position">Position</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">        
-          <input type="date" class="datepicker" id="date">
+          <input type="date" class="datepicker" id="date" [(ngModel)]="date" name="date">
               
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="event" type="text" class="validate">
+          <input id="event" type="text" class="validate" [(ngModel)]="event" name="event">
           <label for="event">Event</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="venue" type="text" class="validate">
+          <input id="venue" type="text" class="validate" [(ngModel)]="venue" name="venue">
           <label for="venue">Venue</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="level" type="text" class="validate">
+          <input id="level" type="text" class="validate" [(ngModel)]="level" name="level">
           <label for="level">Level</label>
         </div>
       </div>
+      <button class="waves-effect waves-light btn-large indigo darken-4" type="submit">Submit</button>
     </form>
-    <button class="waves-effect waves-light btn-large indigo darken-4" type="submit">Submit</button>
+    
 </div>
     <table class="centered">
       <thead>

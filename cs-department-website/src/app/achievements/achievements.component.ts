@@ -22,6 +22,11 @@ export class AchievementsComponent implements OnInit {
       this.details=data
     });
   }
+  onSave(user){
+    this.achievementservice.saveuser(user).subscribe((data)=>{
+     this.ngOnInit();
+    });
+  }
 
   
 

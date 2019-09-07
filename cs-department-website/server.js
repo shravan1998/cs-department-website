@@ -47,6 +47,18 @@ app.get("/achievements/api",function(req,res) {
         }
     })
 });
+app.post("/achievements/api/add",function(req,res){
+    var mod = new model(req.body);
+    mod.save(function(err,data){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.send({data:"Record Inserted"});
+            console.log(data);
+        }
+    });
+});
 
 
 app.listen(8000,function(){
