@@ -17,6 +17,8 @@ export class AchievementsService {
    return this.http.get(`${this.url}`);
   }
   public saveuser(user){
-    return this.http.post(`${this.url}/add`,user);
+    console.log(user);
+    return this.http.post(`${this.url}`,user);
+    
   } 
 }

@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(function(req,res,next){
     res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
     res.setHeader('Allow-Access-Allow-Methods','GET,POST,OPTIONS,PUT,PATCH,DELETE');
-    res.setHeader('Allow-Access-Allow-Headers','Origin,X-Requested-With,content-type,Accept');
+    res.setHeader('Allow-Access-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     res.setHeader("Access-Control-Allow-Credentials",true);
     next();
 });
@@ -47,7 +47,8 @@ app.get("/achievements/api",function(req,res) {
         }
     })
 });
-app.post("/achievements/api/add",function(req,res){
+app.post("/achievements/api",function(req,res){
+    console.log(req.body);
     var mod = new model(req.body);
     mod.save(function(err,data){
         if(err){
