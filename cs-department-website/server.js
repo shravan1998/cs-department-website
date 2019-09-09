@@ -2,6 +2,9 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var mongo = require("mongoose");
+var cors = require("cors");
+
+
 
 var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,response){
     if(err){
@@ -16,6 +19,7 @@ var router = express.Router();
 app.use(bodyParser());
 app.use(bodyParser.json({limit:'5mb'}));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
 
 app.use(function(req,res,next){
     res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
@@ -29,10 +33,14 @@ var Schema = mongo.Schema;
 var achievements=new Schema({
     name:{type:String},
     usn:{type:String},
-    Year_of_admission:{type:Number},
+    year:{type:String},
     competition:{type:String},
-    Win:{type:String},
-    date_of_participation:{type:Date}
+    position:{type:String},
+    date:{type:String},
+    position:{type:String},
+    event:{type:String},
+    level:{type:String},
+    venue:{type:String}
 });
 var model = mongo.model('achievements',achievements);
 app.get("/achievements/api",function(req,res) {
