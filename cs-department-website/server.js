@@ -6,7 +6,7 @@ var cors = require("cors");
 
 
 
-var db = mongo.connect("mongodb://localhost:27017/cs-department",function(err,response){
+var db = mongo.connect("mongodb://localhost:27017/csdepartment",function(err,response){
     if(err){
         throw err;
     }else{
