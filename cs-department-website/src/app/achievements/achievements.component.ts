@@ -11,6 +11,13 @@ export class AchievementsComponent implements OnInit {
   name:String;
   usn:String;
   public details;
+  year:String;
+  competition:String;
+  position:String;
+  date:String;
+  event:String;
+  venue:String;
+  level:String;
   constructor(private achievementservice:AchievementsService,
     private router:Router) {
     
