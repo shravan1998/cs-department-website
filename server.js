@@ -71,6 +71,6 @@ app.post("/achievements/api",function(req,res){
 });
 
 
-app.listen(8000,function(){
+app.listen(8000||process.env.PORT,function(){
     console.log("connected");
 });
