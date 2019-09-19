@@ -11,7 +11,7 @@ const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json'})}
 })
 
 export class AchievementsService {
-  url='http://localhost:8000/achievements/api';
+  url='https://shrouded-shelf-61669.herokuapp.com/';
   constructor(private http:HttpClient) { }
   public getdata(){
    return this.http.get(`${this.url}`);

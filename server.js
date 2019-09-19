@@ -70,7 +70,8 @@ app.post("/",function(req,res){
     });
 });
 
+var port = process.env.PORT || 3000;
 
-app.listen(process.env.PORT || 3000,function(){
+app.listen(port,function(){
     console.log(process.env.PORT);
 });
