@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 app.use(function(req,res,next){
-    res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin','https://cs-dept-scem.netlify.com/');
     res.setHeader('Allow-Access-Allow-Methods','GET,POST,OPTIONS,PUT,PATCH,DELETE');
     res.setHeader('Allow-Access-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     res.setHeader("Access-Control-Allow-Credentials",true);
