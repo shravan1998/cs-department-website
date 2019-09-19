@@ -6,13 +6,14 @@ var cors = require("cors");
 
 
 
-var db = mongo.connect("mongodb://localhost:27017/csdepartment",function(err,response){
+var db = mongo.connect("mongodb+srv://shravan:skrockz@cluster0-5gqte.gcp.mongodb.net/test",function(err,response){
     if(err){
         throw err;
     }else{
         
         console.log("Connected to database");
     }
+    
 });
 var app = express();
 var router = express.Router();
