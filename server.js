@@ -44,7 +44,7 @@ var achievements=new Schema({
     venue:{type:String}
 });
 var model = mongo.model('achievements',achievements);
-app.get("/achievements/api",function(req,res) {
+app.get("/",function(req,res) {
     model.find({})
     .exec(function(err,data){
         if(err){
@@ -56,7 +56,7 @@ app.get("/achievements/api",function(req,res) {
         }
     })
 });
-app.post("/achievements/api",function(req,res){
+app.post("/",function(req,res){
     console.log(req.body);
     var mod = new model(req.body);
     mod.save(function(err,data){
