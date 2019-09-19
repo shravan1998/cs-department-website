@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/shravan1998/cs-department-website/issues"
   },
-  "homepage": "https://github.com/shravan1998/cs-department-website#readme"
+  "homepage": "https://github.com/shravan1998/cs-department-website#readme",
+  "engines": {
+    "node":"10.x"
+  }
 }
